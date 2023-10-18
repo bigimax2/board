@@ -1,14 +1,19 @@
-import requests
 from django.conf import settings
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
 from . import tools
+from .models import AllianceStatic, KillGroup
 
 
-def index(request, id_alli=settings.ID_ALLIANCE):
+def index(request):
+	staticalli = AllianceStatic.objects.all()
+	killgr = KillGroup.objects.all()
 
-	corp_in_alliance = tools.corp_alli(request, id_alli)
-	count_corp = len(corp_in_alliance)
-	state = tools.alli_state(request, id_alli)
+	return render(request, 'index.html', {'staticalli': staticalli, 'killgr': killgr})
 
-	return render(request, 'index.html', {'count_corp': count_corp})
 
+def parser_kill_id(request, id_alli=settings.ID_ALLIANCE):
+	tools.alli_kills_state(request, id_alli)
+	st = tools.alli_state(request, id_alli)
+	tools.kill_groups(st)
+	return redirect('index')
