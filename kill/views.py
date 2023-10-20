@@ -6,14 +6,21 @@ from .models import AllianceStatic, KillGroup
 
 
 def index(request):
-	staticalli = AllianceStatic.objects.all()
-	killgr = KillGroup.objects.all()
+	staticalli = AllianceStatic.objects.defer('date_created')
 
-	return render(request, 'index.html', {'staticalli': staticalli, 'killgr': killgr})
+	killgr = KillGroup.objects.all().filter(pvp=True)
+	a = len(killgr)
+	if a % 2 == 0:
+		do = int(a / 2 )
+	else:
+		do = int((a + 1 ) / 2)
+	kill1 = killgr[0:do]
+	kill2 = killgr[do:a]
+	return render(request, 'index.html', {'staticalli': staticalli, 'killgr': killgr,'kill1': kill1,'kill2': kill2})
 
 
 def parser_kill_id(request, id_alli=settings.ID_ALLIANCE):
-	tools.alli_kills_state(request, id_alli)
+	#tools.alli_kills_state(request, id_alli)
 	st = tools.alli_state(request, id_alli)
-	tools.kill_groups(st)
+	#tools.kill_groups(st,id_alli)
 	return redirect('index')

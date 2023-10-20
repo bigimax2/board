@@ -93,102 +93,14 @@
         <div class="table-responsive">
           <table class="table">
             <tbody>
+            {% if kill1  %}
+                    {% for i in kill1 %}
               <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 14px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Frigates</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
+                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 14px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">{{ i.name }}</td>
+                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">{{ i.ship_kills }}</td>
               </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Interceptors</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Asault Ships</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Covert Ops</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Electronik Frigate</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Destroyer</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Interdictors</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Cruiser</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Heavi Assault</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Recon Ship</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Logistic</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Heavi Interdictor</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Strategic Cruiser</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Industrial Ship</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Mining Barge</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Mining Barge</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Mining Barge</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Mining Barge</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Mining Barge</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Mining Barge</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Mining Barge</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Mining Barge</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Mining Barge</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 15px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">Mining Barge</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">Cell 2</td>
-              </tr>
+                    {% endfor %}
+            {% endif %}
             </tbody>
           </table>
         </div>
@@ -197,102 +109,14 @@
         <div class="table-responsive">
           <table class="table">
             <tbody>
+            {% if kill2 %}
+                {% for i in kill2 %}
               <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Transport Ship</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
+                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">{{ i.name }}</td>
+                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">{{ i.ship_kills }}</td>
               </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Exhumer</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-right-width: 0px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Battlecruse</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Command Ship</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Battleship</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Marauders</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Black Ops</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Freighter</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Jump Freighter</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Industrial Command</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Capital Industrial</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Dreadnought</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.62);">Carrier</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Supercarrier</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Titans</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Black Ops</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Freighter</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Jump Freighter</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Industrial Command</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Capital Industrial</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Dreadnought</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.62);">Carrier</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Supercarrier</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
-              <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">Titans</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-              </tr>
+                {% endfor %}
+            {% endif %}
             </tbody>
           </table>
         </div>
@@ -302,102 +126,14 @@
         <div class="table-responsive">
           <table class="table">
             <tbody>
+            {% if kill1 %}
+                {% for i in kill1 %}
               <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
+                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 14px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">{{ i.name }}</td>
+                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">{{ i.ship_loss }}</td>
               </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
+                {% endfor %}
+            {% endif %}
             </tbody>
           </table>
         </div>
@@ -406,102 +142,14 @@
         <div class="table-responsive">
           <table class="table">
             <tbody>
+            {% if kill2 %}
+            {% for i in kill2 %}
               <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
+                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">{{ i.name }}</td>
+                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">{{ i.ship_loss }}</td>
               </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
-              <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
-              </tr>
+            {% endfor %}
+            {% endif %}
             </tbody>
           </table>
         </div>
@@ -522,6 +170,7 @@
     <div class="row">
       <div class="col-lg-3"></div>
       <div class="col-lg-6">
+
            {% for i in staticalli %}
         <div class="table-responsive" style="color: rgb(255,255,255);background: rgba(0,0,0,0.3);">
           <table class="table">
@@ -548,6 +197,7 @@
           </table>
         </div>
           {% endfor %}
+
       </div>
       <div class="col-lg-3"></div>
     </div>
