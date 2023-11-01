@@ -24,6 +24,8 @@
                 <th style="text-align: center;color: var(--bs-table-striped-bg);background: var(--bs-table-striped-bg);border-bottom-color: var(--bs-table-striped-bg);"></th>
                 <th style="text-align: center;color: var(--bs-table-striped-bg);background: var(--bs-table-striped-bg);border-bottom-color: var(--bs-table-striped-bg);"></th>
                 <th style="text-align: center;font-size: 15px;line-height: 32px;background: var(--bs-table-striped-bg);color: var(--bs-body-bg);">Top 15&nbsp; Corps.</th>
+
+
               </tr>
             </tbody>
           </table>
@@ -77,13 +79,15 @@
     </div>
     <div class="row" style="background: rgba(0,0,0,0.45);">
       <div class="col-lg-2">
-        <div class="table-responsive" style="font-size: 10px;line-height: 10px;letter-spacing: 0px;font-family: Lora;">
+        <div class="table-responsive" style="font-size: 12px;line-height: 20px;letter-spacing: 0px;font-family: Lora;">
           <table class="table">
             <tbody>
+            {% for corp in top_15_corp %}
               <tr>
-                <td style="color: rgb(255,255,255);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td style="text-align: right;color: rgb(255,255,255);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
+                <td style="color: #ff5900;background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);">{{ corp.corp_name }}</td>
+                <td style="text-align: right;color: #FF5900;background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);">{{ corp.corp_kills }}</td>
               </tr>
+            {% endfor %}
             </tbody>
           </table>
         </div>
@@ -155,13 +159,15 @@
         </div>
       </div>
       <div class="col-lg-2">
-        <div class="table-responsive" style="font-size: 10px;line-height: 10px;letter-spacing: 0px;font-family: Lora;">
+        <div class="table-responsive" style="font-size: 14px;line-height: 20px;letter-spacing: 0px;font-family: Lora,serif;">
           <table class="table">
             <tbody>
+            {% for char in top_15_chars %}
               <tr>
-                <td style="color: rgb(255,255,255);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);">Cell 1</td>
-                <td style="text-align: right;background: var(--bs-table-striped-bg);color: var(--bs-table-bg);border-bottom-color: rgba(222,226,230,0.5);">Cell 2</td>
+                <td style="color: #FF5900;background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);">{{ char.char_name }}</td>
+                <td style="text-align: right;background: var(--bs-table-striped-bg);color: #FF5900;border-bottom-color: rgba(222,226,230,0.5);">{{ char.char_kills }}</td>
               </tr>
+            {% endfor %}
             </tbody>
           </table>
         </div>

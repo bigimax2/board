@@ -12,6 +12,7 @@ class AllianceStatic(models.Model):
 	count_active_chars = models.IntegerField(blank=True, null=True)
 	date_created = models.DateTimeField(auto_now_add=True,  null=True, )
 	alli_id = models.IntegerField(blank=True, null=True)
+	date_founded_alli = models.CharField(max_length=255, blank=True, null=True)
 
 
 
@@ -49,3 +50,46 @@ class CharacterActive(models.Model):
 
 	def __str__(self):
 		return self.char_id
+
+
+class Kills(models.Model):
+	killmailID = models.CharField(max_length=255, blank=True, null=True)
+	locationID = models.CharField(max_length=20, blank=True, null=True)
+	hash_kill = models.CharField(max_length=255, blank=True, null=True)
+	fittedValue = models.CharField(max_length=255, blank=True, null=True)
+	droppedValue = models.CharField(max_length=255, blank=True, null=True)
+	destroyedValue = models.CharField(max_length=255, blank=True, null=True)
+	totalValue = models.CharField(max_length=255, blank=True, null=True)
+	points = models.CharField(max_length=255, blank=True, null=True)
+	npc = models.BooleanField(default=False)
+	solo = models.BooleanField(default=False)
+	awox = models.BooleanField(default=False)
+	id_alli = models.ForeignKey(AllianceStatic, null=True, on_delete=models.CASCADE)
+	json_kill = models.JSONField(blank=True, null=True)
+
+
+	def __str__(self):
+		return self.killmailID
+
+
+class KillFromCCP(models.Model):
+	idkill = models.CharField(max_length=255, blank=True, null=True)
+	date_kill = models.CharField(max_length=255, blank=True, null=True)
+	json_file = models.JSONField(blank=True, null=True)
+	solar_system = models.CharField(max_length=255, blank=True, null=True)
+	hash_kill = models.CharField(max_length=255, blank=True, null=True)
+	attack_final = models.CharField(max_length=255, blank=True, null=True)
+	attack_final_personage_id = models.CharField(max_length=255, blank=True, null=True)
+	attack_final_personage_name = models.CharField(max_length=255, blank=True, null=True)
+	attack_final_personage_corp = models.CharField(max_length=255, blank=True, null=True)
+	attack_final_personage_all = models.CharField(max_length=255, blank=True, null=True)
+	attack_final_personage_ship = models.CharField(max_length=255, blank=True, null=True)
+	victim_personage_id = models.CharField(max_length=255, blank=True, null=True)
+	victim_personage_name = models.CharField(max_length=255, blank=True, null=True)
+	victim_personage_corp = models.CharField(max_length=255, blank=True, null=True)
+	victim_personage_all = models.CharField(max_length=255, blank=True, null=True)
+	victim_personage_ship = models.CharField(max_length=255, blank=True, null=True)
+
+
+	def  __str__(self):
+		return self.idkill
