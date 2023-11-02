@@ -176,7 +176,7 @@ def DownloadFile(id_alli = settings.ID_ALLIANCE):
 	n_day = 0
 	fondaunt_date = (datetime.datetime(2023, 7, 16))
 
-	while fondaunt_date <= current_date:
+	while fondaunt_date < current_date:
 
 		fun_year = fondaunt_date.year
 		mont_slice = fondaunt_date
@@ -232,17 +232,27 @@ def CikleKillAlliance():
 
 							if 'character_id' in vict.keys():
 								vic_char_id = vict['character_id']
+								vic_char_name = Personage_Name(vic_char_id)
 							else:
 								vic_char_id = None
 							vic_char_corp = vict['corporation_id']
+							vic_char_corp_name = Corporate_Name(vic_char_corp)
+							vic_char_corp_icon = Corporation_Icon(vic_char_corp)
 							if 'alliance_id' in vict.keys():
 								vic_char_alli = vict['alliance_id']
+								vic_char_alli_name = Alliance_Name(vic_char_alli)
+								vic_char_alli_icon = Alliance_Icon(vic_char_alli)
+
 							else:
 								vic_char_alli = None
 							vic_char_ship = vict['ship_type_id']
+							vic_char_ship_icon = Ship_Icon(vic_char_ship)
 							idkill = data['killmail_id']
 							datekill = data['killmail_time']
 							systemid = data['solar_system_id']
+							system_info = System_Info(systemid)
+							systen_name = system_info[0]
+							system_ss = system_info[1]
 							hashkill = data['killmail_hash']
 
 							for t in attac:
@@ -252,23 +262,49 @@ def CikleKillAlliance():
 								else:
 									if 'character_id' in t.keys():
 										att_char_id = t['character_id']
+										att_char_name = Personage_Name(att_char_id)
 									else:
 										att_char_id = None
 									if 'corporation_id' in t.keys():
 										att_char_corp = t['corporation_id']
+										att_char_corp_name = Corporate_Name(att_char_corp)
+										att_char_corp_icon = Corporation_Icon(att_char_corp)
 									else:
 										att_char_corp = None
 									if 'alliance_id' in t.keys():
 										att_char_alli = t['alliance_id']
+										att_char_alli_name = Alliance_Name(att_char_alli)
+										att_char_alli_icon = Alliance_Icon(att_char_alli)
 									else:
 										att_char_alli = None
 									att_char_ship = t['ship_type_id']
-							default_for_update = {'idkill': idkill, 'date_kill': datekill, 'json_file': data, 'solar_system': systemid
-							                      , 'hash_kill': hashkill, 'attack_final_personage_id': att_char_id,
-							                       'attack_final_personage_corp': att_char_corp, 'attack_final_personage_all': att_char_alli,
-							                      'attack_final_personage_ship': att_char_ship, 'victim_personage_id': vic_char_id,
-							                      'victim_personage_corp': vic_char_corp, 'victim_personage_all': vic_char_alli,
-							                      'victim_personage_ship': vic_char_ship}
+
+							default_for_update = {'idkill': idkill,
+							                      'date_kill': datekill,
+							                      'json_file': data,
+							                      'solar_system': systemid,
+							                      'hash_kill': hashkill,
+							                      'attack_final_personage_id': att_char_id,
+							                      'attack_final_personage_name': att_char_name,
+							                      'attack_final_personage_corp': att_char_corp,
+							                      'attack_final_personage_corp_name': att_char_corp_name,
+							                      'attack_final_personage_corp_icon': att_char_corp_icon,
+							                      'attack_final_personage_all': att_char_alli,
+							                      'attack_final_personage_all_name': att_char_alli_name,
+							                      'attack_final_personage_all_icon': att_char_alli_icon,
+							                      'attack_final_personage_ship': att_char_ship,
+							                      'victim_personage_id': vic_char_id,
+							                      'victim_personage_name': vic_char_name,
+							                      'victim_personage_corp': vic_char_corp,
+							                      'victim_personage_corp_name': vic_char_corp_name,
+							                      'victim_personage_corp_icon': vic_char_corp_icon,
+							                      'victim_personage_all': vic_char_alli,
+							                      'victim_personage_all_name': vic_char_alli_name,
+							                      'victim_personage_all_icon': vic_char_alli_icon,
+							                      'victim_personage_ship': vic_char_ship,
+							                      'victim_personage_ship_icon': vic_char_ship_icon,
+							                      'solar_system_name': systen_name,
+							                      'solar_system_ss': system_ss,}
 							KillFromCCP.objects.update_or_create(idkill=idkill, defaults=default_for_update)
 
 						else:
@@ -276,3 +312,66 @@ def CikleKillAlliance():
 
 	return direc
 
+def Personage_Name(data):
+	ur = 'https://esi.evetech.net/latest/characters/{}/?datasource=tranquility'.format(data)
+	resultat = requests.get(ur)
+	if resultat.status_code == 200:
+		resultat.raise_for_status()
+		data = resultat.json()
+		name = data['name']
+	else:
+		name = None
+	return name
+
+def Corporate_Name(data):
+	ur = 'https://esi.evetech.net/latest/corporations/{}/?datasource=tranquility'.format(data)
+	resultat = requests.get(ur)
+	resultat.raise_for_status()
+	data = resultat.json()
+	if 'name' in data.keys():
+		name = data['name']
+	else:
+		name = None
+	return name
+
+def Corporation_Icon(data):
+	ur = "https://images.evetech.net/corporations/{}/logo?tenant=tranquility&size=64".format(data)
+	resultat = requests.get(ur)
+	resultat.raise_for_status()
+	data = resultat.url
+	return data
+
+def Alliance_Name(data):
+	ur = 'https://esi.evetech.net/latest/alliances/{}/?datasource=tranquility'.format(data)
+	resultat = requests.get(ur)
+	resultat.raise_for_status()
+	data = resultat.json()
+	if 'name' in data.keys():
+		name = data['name']
+	else:
+		name = None
+	return name
+
+def Alliance_Icon(data):
+	ur = "https://images.evetech.net/Alliance/{}_64.png".format(data)
+	resultat = requests.get(ur)
+	resultat.raise_for_status()
+	data = resultat.url
+	return data
+
+def Ship_Icon(data):
+	ur = 'https://images.evetech.net/types/{}/icon'.format(data)
+	resultat = requests.get(ur)
+	resultat.raise_for_status()
+	data = resultat.url
+	return data
+
+def System_Info(data):
+	ur = 'https://esi.evetech.net/latest/universe/systems/{}/?datasource=tranquility&language=en'.format(data)
+	resultat = requests.get(ur)
+	resultat.raise_for_status()
+	data = resultat.json()
+	name = data['name']
+	sec = data['security_status']
+	ss = round(sec,1)
+	return name, ss

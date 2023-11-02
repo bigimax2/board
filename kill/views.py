@@ -26,8 +26,10 @@ def index(request):
 		do = int((a + 1 ) / 2)
 	kill1 = killgr[0:do]
 	kill2 = killgr[do:a]
+
+	killlist = KillFromCCP.objects.all().order_by('date_kill')
 	return render(request, 'index.html', {'staticalli': staticalli, 'killgr': killgr,'kill1': kill1,'kill2': kill2,
-	                                       'top_15_corp': top_15_corp, 'top_15_chars': top_15_chars})
+	                                       'top_15_corp': top_15_corp, 'top_15_chars': top_15_chars, 'killlist': killlist})
 
 
 def parser_kill_id(request, id_alli=settings.ID_ALLIANCE):
@@ -35,7 +37,7 @@ def parser_kill_id(request, id_alli=settings.ID_ALLIANCE):
 	#st = tools.alli_state(request, id_alli)
 	#tools.kill_groups(st,id_alli)
 	#tools.Active_Pvp(st,id_alli)
-	tools.DownloadFile()
+	#tools.DownloadFile()
 	#tools.GetRelate()
-	#tools.CikleKillAlliance()
+	tools.CikleKillAlliance()
 	return redirect('index')

@@ -223,24 +223,39 @@
               </tr>
             </thead>
             <tbody>
+            {% for kill in killlist %}
               <tr>
                 <td style="width: 50px;color: rgb(255,255,255);border-width: 0px;background: var(--bs-table-striped-bg);"><span>time</span>
                     <br />
                     <a href="#" style="border-color: rgb(251,251,251);color: rgb(255,255,255);">price</a></td>
                 <td style="border-width: 0px;text-align: center;vertical-align: middle;background: var(--bs-table-striped-bg);">
-                  <a href="#"><img style="width: 40px;height: 40px;"></a>
+                  <a href="#"><img style="width: 40px;height: 40px;" src="{{ kill.victim_personage_ship_icon }}"></a>
                 </td>
                 <td style="border-width: 0px;background: var(--bs-table-striped-bg);">
-                  <div style="width: 100%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;"><span style="color: rgb(255,255,255);">SS&nbsp;</span><a href="#" style="color: rgb(247,247,247);">system</a></div><a href="#" style="color: rgb(254,254,254);">region</a></td>
+                  <div style="width: 100%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">
+                      <span style="color: rgb(255,255,255);">{{ kill.solar_system_ss }}</span>
+                      <a href="#" style="color: rgb(247,247,247);">{{ kill.solar_system_name }}</a>
+                  </div>
+                    <a href="#" style="color: rgb(254,254,254);">region</a>
+                </td>
                 <td style="border-width: 0px;height: 40.5px;width: 40px;background: var(--bs-table-striped-bg);">
-                  <a href="#"><img style="width: 40px;height: 40px;margin-right: 0px;margin-left: 4px;"></a>
+                  <a href="#"><img style="width: 40px;height: 40px;margin-right: 0px;margin-left: 4px;" src="{{ kill.victim_personage_all_icon }}"></a>
                 </td>
-                <td style="border-width: 0px;color: rgb(252,252,252);background: var(--bs-table-striped-bg);"></td>
+                  <td style="border-width: 0px;color: rgb(252,252,252);background: var(--bs-table-striped-bg);">
+                      <span>{{ kill.victim_personage_name }}</span><br>
+                      <span>{{ kill.victim_personage_corp_name }}</span><br>
+                      <span>{{ kill.victim_personage_all_name}}</span>
+                  </td>
                 <td style="border-width: 0px;background: var(--bs-table-striped-bg);">
-                  <a href="#"><img style="width: 40px;height: 40px;padding: 0px;margin: 0px;margin-right: 0px;margin-left: 3px;"></a>
+                  <a href="#"><img style="width: 40px;height: 40px;padding: 0px;margin: 0px;margin-right: 0px;margin-left: 3px;" src="{{ kill.attack_final_personage_all_icon }}"></a>
                 </td>
-                <td style="border-width: 0px;background: var(--bs-table-striped-bg);"></td>
+                <td style="border-width: 0px;color: rgb(252,252,252);background: var(--bs-table-striped-bg);">
+                    <span>{{ kill.attack_final_personage_name }}</span><br>
+                    <span>{{ kill.attack_final_personage_corp_name }}</span><br>
+                    <span>{{ kill.attack_final_personage_all_name }}</span>
+                </td>
               </tr>
+            {% endfor %}
             </tbody>
           </table>
         </div>
