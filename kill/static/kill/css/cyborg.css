@@ -1,0 +1,105 @@
+@media(min-width: 768px) {
+    body {
+        background-color:#060606;
+        background-image: url(/img/starbright_1.png);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-attachment: fixed
+    }
+}
+
+.nobackground,.navbar {
+    background: #000;
+    box-shadow: 0 0 5px 5px rgba(6,6,6,.95)
+}
+
+.table tbody tr.error td {
+    background-color: #2f0202
+}
+
+.table tbody tr.winwin td {
+    background-color: #001600
+}
+
+select,textarea,input[type=text],input[type=password],input[type=datetime],input[type=datetime-local],input[type=date],input[type=month],input[type=time],input[type=week],input[type=number],input[type=email],input[type=url],input[type=search],input[type=tel],input[type=color],.uneditable-input {
+    color: #000
+}
+
+.item_dropped_row {
+    background-color: #001600
+}
+
+.item_dropped_row .price {
+    color: #fff
+}
+
+.item_dropped {
+    color: #fff
+}
+
+.item_dropped_qty {
+    color: #fff
+}
+
+.item_destroyed,.red {
+    color: red
+}
+
+.green {
+    color: green
+}
+
+.no-stripe {
+    background-color: #000
+}
+
+.table-no-hover tbody tr:hover td,.table tbody tr:hover th {
+    background-color: transparent
+}
+
+.alert-danger {
+    background-color: maroon
+}
+
+table,.table {
+    color: #888
+}
+
+table a,.table a {
+    color: #ffffff;
+    text-decoration: none
+}
+
+tr.heading {
+    background-color: #000
+}
+
+.nav .caret,.nav a:hover .caret {
+    border-top-color: #888;
+    border-bottom-color: #888
+}
+
+input.datepicker {
+    cursor: pointer!important;
+    outline: none;
+    color: #fff;
+    width: 70px;
+    background-color: #222;
+    border: 1px solid #282828;
+    margin-right: 10px;
+    margin-top: 0!important;
+    text-align: center
+}
+
+pre {
+    background-color: #000;
+    font-weight: 700;
+    color: #6e6e6e;
+    border-color: #333
+}
+
+.alltime-ranks {
+    background-color: #060606
+}

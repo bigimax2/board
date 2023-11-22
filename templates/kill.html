@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load humanize %}
+{% load static %}
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+		<title>killboard C A M E L O T</title>
+		<link rel="stylesheet" href="/static/kill/bootstrap/kill/kill_view.css" />
+		<link rel="stylesheet" href="/static/kill/css/styles.min.css" />
+        <link rel="stylesheet" href="/static/kill/css/kill.css" />
+        <link rel="stylesheet" href="/static/kill/css/cyborg.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.2/css/bootstrap-slider.min.css">
+	</head>
+
+	<body style="opacity: 1;background: url(/static/kill/img/a-year-in-eve.png) no-repeat fixed center;">
+		<h1 class="text-center text-white d-none d-lg-block site-heading" style="margin-top: 30px;">
+			<span class="site-heading-lower" style="font-weight: bold;letter-spacing: 20px; font-size: 8rem;font-family: Raleway;margin-top: 0px;padding-top: 0px;">C A M E L O T</span>
+		</h1>
+		<div class="container" style="font-size: 14px;background: rgba(0,0,0,0.57);color: rgb(63,65,67);line-height: 14px;">
+			<div class="container">
+				<span class="pagecontent">
+					<div class="col-lg-8" style="padding-left: 0px;">
+						<table class="hidden-xs" style="background-color:transparent;">
+							<tbody>
+								<tr>
+									<td style="padding: 0px; vertical-align: top;">
+										<div id="Fitting_Panel" style="position: relative; height:398px; width:398px; z-index: 3">
+											<div id="mask" style="position:absolute; left: 0px; top: 0px; width:398px; height:398px;">
+												<img style="position:absolute; left: 0px; top: 0px;  height:398px; width:398px; border:0px" src="/static/kill/img/panel/tyrannis.png" alt="" />
+											</div>
+
+                                    {% for k in kill %}
+                                        {% if k.victim_personage_ship_group_id == '29' %}
+                                            <div id="highx" style="position:absolute; left: 0px; top: 0px; width: 398px; height: 398px;">
+												<img src="/static/kill/img/panel/5h.png" alt="" style="border:0px;" />
+											</div>
+                                            <div id="lowx" style="position:absolute; left: 0px; top: 0px; width: 398px; height: 398px;">
+												<img src="/static/kill/img/panel/5l.png" alt="" style="border:0px;" />
+											</div>
+                                        {% else %}
+
+                                        {% for s in count_slot %}
+											<div id="highx" style="position:absolute; left: 0px; top: 0px; width: 398px; height: 398px;">
+												<img src="/static/kill/img/panel/{% if k.victim_personage_ship_group_id == '963' %}{{ s.count_hi_slot_real }}{% else %}{{ s.count_hi_slot }}{% endif %}h.png" alt="" style="border:0px;" />
+											</div>
+                                        {% for hi_slot in hi_slot %}
+											<div id="high1" style="position:absolute; left:73px; top:60px; width:32px; height:32px;">{% if hi_slot.HiSlot0 != None %}<img src="/static/kill/item/types/{{ hi_slot.HiSlot0 }}_32.png" alt="">{% endif %}</div>
+											<div id="high2" style="position:absolute; left:102px; top:42px; width:32px; height:32px;">{% if hi_slot.HiSlot1 != None %}<img src="/static/kill/item/types/{{ hi_slot.HiSlot1 }}_32.png" alt="">{% endif %}</div>
+											<div id="high3" style="position:absolute; left:134px; top:27px; width:32px; height:32px;">{% if hi_slot.HiSlot2 != None %}<img src="/static/kill/item/types/{{ hi_slot.HiSlot2 }}_32.png" alt="">{% endif %}</div>
+											<div id="high4" style="position:absolute; left:169px; top:21px; width:32px; height:32px;">{% if hi_slot.HiSlot3 != None %}<img src="/static/kill/item/types/{{ hi_slot.HiSlot3 }}_32.png" alt="">{% endif %}</div>
+											<div id="high5" style="position:absolute; left:203px; top:22px; width:32px; height:32px;">{% if hi_slot.HiSlot4 != None %}<img src="/static/kill/item/types/{{ hi_slot.HiSlot4 }}_32.png" alt="">{% endif %}</div>
+											<div id="high6" style="position:absolute; left:238px; top:30px; width:32px; height:32px;">{% if hi_slot.HiSlot5 != None %}<img src="/static/kill/item/types/{{ hi_slot.HiSlot5 }}_32.png" alt="">{% endif %}</div>
+											<div id="high7" style="position:absolute; left:270px; top:45px; width:32px; height:32px;">{% if hi_slot.HiSlot6 != None %}<img src="/static/kill/item/types/{{ hi_slot.HiSlot6 }}_32.png" alt="">{% endif %}</div>
+											<div id="high8" style="position:absolute; left:295px; top:64px; width:32px; height:32px;">{% if hi_slot.HiSlot7 != None %}<img src="/static/kill/item/types/{{ hi_slot.HiSlot7 }}_32.png" alt="">{% endif %}</div>
+                                        {% endfor %}
+											<div id="midx" style="position:absolute; left: 0px; top: 0px; width: 398px; height: 398px;">
+												<img src="/static/kill/img/panel/{% if k.victim_personage_ship_group_id == '963' %}{{ s.count_mid_slot_real }}{% else %}{{ s.count_mid_slot }}{% endif %}m.png" alt="" style="border:0px;" />
+											</div>
+                                        {% for m in mid_slot %}
+											<div id="mid1" style="position:absolute; left:26px; top:140px; width:32px; height:32px;">{%  if m.MedSlot0 != None %}<img src="/static/kill/item/types/{{ m.MedSlot0 }}_32.png" alt="">{% endif %}</div>
+											<div id="mid2" style="position:absolute; left:24px; top:176px; width:32px; height:32px;">{%  if m.MedSlot1 != None %}<img src="/static/kill/item/types/{{ m.MedSlot1 }}_32.png" alt="">{% endif %}</div>
+											<div id="mid3" style="position:absolute; left:23px; top:212px; width:32px; height:32px;">{%  if m.MedSlot2 != None %}<img src="/static/kill/item/types/{{ m.MedSlot2 }}_32.png" alt="">{% endif %}</div>
+											<div id="mid4" style="position:absolute; left:30px; top:245px; width:32px; height:32px;">{%  if m.MedSlot3 != None %}<img src="/static/kill/item/types/{{ m.MedSlot3 }}_32.png" alt="">{% endif %}</div>
+											<div id="mid5" style="position:absolute; left:46px; top:278px; width:32px; height:32px;">{%  if m.MedSlot4 != None %}<img src="/static/kill/item/types/{{ m.MedSlot4 }}_32.png" alt="">{% endif %}</div>
+											<div id="mid6" style="position:absolute; left:69px; top:304px; width:32px; height:32px;">{%  if m.MedSlot5 != None %}<img src="/static/kill/item/types/{{ m.MedSlot5 }}_32.png" alt="">{% endif %}</div>
+											<div id="mid7" style="position:absolute; left:100px; top:328px; width:32px; height:32px;">{%  if m.MedSlot6 != None %}<img src="/static/kill/item/types/{{ m.MedSlot6 }}_32.png" alt="">{% endif %}</div>
+											<div id="mid8" style="position:absolute; left:133px; top:342px; width:32px; height:32px;">{%  if m.MedSlot7 != None %}<img src="/static/kill/item/types/{{ m.MedSlot7 }}_32.png" alt="">{% endif %}</div>
+											{% endfor %}
+                                            <div id="lowx" style="position:absolute; left: 0px; top: 0px; width: 398px; height: 398px;">
+												<img src="/static/kill/img/panel/{% if k.victim_personage_ship_group_id == '963' %}{{ s.count_low_slot_real }}{% else %}{{ s.count_low_slot }}{% endif %}l.png" alt="" style="border:0px;" />
+											</div>
+                                        {% for l in low_slot %}
+
+											<div id="low1" style="position:absolute; left:344px; top:143px; width:32px; height:32px;">{%  if l.loSlot0 != None %}<img src="/static/kill/item/types/{{ l.loSlot0 }}_32.png" alt="Images">{% endif %}</div>
+											<div id="low2" style="position:absolute; left:350px; top:178px; width:32px; height:32px;">{%  if l.loSlot1 != None %}<img src="/static/kill/item/types/{{ l.loSlot1 }}_32.png" alt="">{% endif %}</div>
+											<div id="low3" style="position:absolute; left:349px; top:213px; width:32px; height:32px;">{%  if l.loSlot2 != None %}<img src="/static/kill/item/types/{{ l.loSlot2 }}_32.png" alt="">{% endif %}</div>
+											<div id="low4" style="position:absolute; left:340px; top:246px; width:32px; height:32px;">{%  if l.loSlot3 != None %}<img src="/static/kill/item/types/{{ l.loSlot3 }}_32.png" alt="">{% endif %}</div>
+											<div id="low5" style="position:absolute; left:323px; top:277px; width:32px; height:32px;">{%  if l.loSlot4 != None %}<img src="/static/kill/item/types/{{ l.loSlot4 }}_32.png" alt="">{% endif %}</div>
+											<div id="low6" style="position:absolute; left:300px; top:304px; width:32px; height:32px;">{%  if l.loSlot5 != None %}<img src="/static/kill/item/types/{{ l.loSlot5 }}_32.png" alt="">{% endif %}</div>
+											<div id="low7" style="position:absolute; left:268px; top:324px; width:32px; height:32px;">{%  if l.loSlot6 != None %}<img src="/static/kill/item/types/{{ l.loSlot6 }}_32.png" alt="">{% endif %}</div>
+											<div id="low8" style="position:absolute; left:234px; top:338px; width:32px; height:32px;">{%  if l.loSlot7 != None %}<img src="/static/kill/item/types/{{ l.loSlot7 }}_32.png" alt="">{% endif %}</div>
+                                            {% endfor %}
+											<div id="rigxx" style="position:absolute; left: 0px; top: 0px; width: 398px; height: 398px;">
+												<img src="/static/kill/img/panel/{{ s.count_rig_slot }}r.png" alt="" style="border:0px;" />
+                                            </div>
+                                            {%  for r in rig_slot %}
+											<div id="rig1" style="position:absolute; left:148px; top:259px; width:32px; height:32px;">{%  if r.RigSlot1 != None %}<img src="/static/kill/item/types/{{ r.RigSlot1 }}_32.png" alt="">{% endif %}</div>
+											<div id="rig2" style="position:absolute; left:185px; top:267px; width:32px; height:32px;">{%  if r.RigSlot2 != None %}<img src="/static/kill/item/types/{{ r.RigSlot2 }}_32.png" alt="">{% endif %}</div>
+											<div id="rig3" style="position:absolute; left:221px; top:259px; width:32px; height:32px;">{%  if r.RigSlot3 != None %}<img src="/static/kill/item/types/{{ r.RigSlot3 }}_32.png" alt="">{% endif %}</div>
+                                            {% endfor %}
+
+                                            <div id="subx" style="position:absolute; left: 0px; top: 0px; width: 398px; height: 398px; z-index:-1;">
+                                                {% if k.victim_personage_ship_group_id == '963' %}
+                                                <img src="/static/kill/img/panel/4s.png" alt="" style="border:0px;">
+                                                {% else %}
+                                                <img src="/static/kill/img/panel/{{ s.count_sub_slot }}s.png" alt="" style="border:0px;">
+                                                {% endif %}
+                                            </div>
+                                            {% for su in sub_slot %}
+                                            <div id="sub1" style="position:absolute; left:117px; top:131px; width:32px; height:32px;">
+                                                    {% if su.SubSystem1 != None %}<img class="img-rounded" src="/static/kill/item/types/{{ su.SubSystem1 }}_32.png" style="height: 32px; width: 32px;" alt="">{% endif %}
+                                            </div>
+                                            <div id="sub2" style="position:absolute; left:147px; top:108px; width:32px; height:32px;">
+                                                {% if su.SubSystem2 != None %}<img class="img-rounded" src="/static/kill/item/types/{{ su.SubSystem2 }}_32.png" style="height: 32px; width: 32px;" alt="">{% endif %}
+                                            </div>
+                                            <div id="sub3" style="position:absolute; left:184px; top:98px; width:32px; height:32px;">
+                                                    {% if su.SubSystem3 != None %}<img class="img-rounded" src="/static/kill/item/types/{{ su.SubSystem3 }}_32.png" style="height: 32px; width: 32px;" alt="">{% endif %}
+                                            </div>
+                                            <div id="sub4" style="position:absolute; left:221px; top:107px; width:32px; height:32px;">
+                                                    {% if su.SubSystem4 != None %}<img class="img-rounded" src="/static/kill/item/types/{{ su.SubSystem4 }}_32.png" style="height: 32px; width: 32px;" alt="">{% endif %}
+                                            </div>
+                                            <div id="sub5" style="position:absolute; left:250px; top:131px; width:32px; height:32px;">
+                                                    {% if su.SubSystem5 != None %}<img class="img-rounded" src="/static/kill/item/types/{{ su.SubSystem5 }}_32.png" style="height: 32px; width: 32px;" alt="">{% endif %}
+                                            </div>
+                                            {% endfor %}
+                                            {% for a_hi in hi_slot_amo %}
+											<div id="high1l" style="position:absolute; left:94px; top:88px; width:24px; height:24px;">{% if a_hi.HiSlot0_ammo != None %}<img src="/static/kill/item/types/{{ a_hi.HiSlot0_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="high2l" style="position:absolute; left:119px; top:70px; width:24px; height:24px;">{% if a_hi.HiSlot1_ammo != None %}<img src="/static/kill/item/types/{{ a_hi.HiSlot1_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="high3l" style="position:absolute; left:146px; top:58px; width:24px; height:24px;">{% if a_hi.HiSlot2_ammo != None %}<img src="/static/kill/item/types/{{ a_hi.HiSlot2_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="high4l" style="position:absolute; left:175px; top:52px; width:24px; height:24px;">{% if a_hi.HiSlot3_ammo != None %}<img src="/static/kill/item/types/{{ a_hi.HiSlot3_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="high5l" style="position:absolute; left:204px; top:52px; width:24px; height:24px;">{% if a_hi.HiSlot4_ammo != None %}<img src="/static/kill/item/types/{{ a_hi.HiSlot4_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="high6l" style="position:absolute; left:232px; top:60px; width:24px; height:24px;">{% if a_hi.HiSlot5_ammo != None %}<img src="/static/kill/item/types/{{ a_hi.HiSlot5_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="high7l" style="position:absolute; left:258px; top:72px; width:24px; height:24px;">{% if a_hi.HiSlot6_ammo != None %}<img src="/static/kill/item/types/{{ a_hi.HiSlot6_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="high8l" style="position:absolute; left:280px; top:91px; width:24px; height:24px;">{% if a_hi.HiSlot7_ammo != None %}<img src="/static/kill/item/types/{{ a_hi.HiSlot7_ammo }}_32.png" alt="">{% endif %}</div>
+                                            {% endfor %}
+                                            {% for m_amo in med_slot_amo %}
+											<div id="mid1l" style="position:absolute; left:59px; top:154px; width:24px; height:24px;">{% if m_amo.MedSlot0_ammo != None %}<img src="/static/kill/item/types/{{ m_amo.MedSlot0_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="mid2l" style="position:absolute; left:54px; top:182px; width:24px; height:24px;">{% if m_amo.MedSlot1_ammo != None %}<img src="/static/kill/item/types/{{ m_amo.MedSlot1_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="mid3l" style="position:absolute; left:56px; top:210px; width:24px; height:24px;">{% if m_amo.MedSlot2_ammo != None %}<img src="/static/kill/item/types/{{ m_amo.MedSlot2_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="mid4l" style="position:absolute; left:62px; top:238px; width:24px; height:24px;">{% if m_amo.MedSlot3_ammo != None %}<img src="/static/kill/item/types/{{ m_amo.MedSlot3_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="mid5l" style="position:absolute; left:76px; top:265px; width:24px; height:24px;">{% if m_amo.MedSlot4_ammo != None %}<img src="/static/kill/item/types/{{ m_amo.MedSlot4_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="mid6l" style="position:absolute; left:94px; top:288px; width:24px; height:24px;">{% if m_amo.MedSlot5_ammo != None %}<img src="/static/kill/item/types/{{ m_amo.MedSlot5_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="mid7l" style="position:absolute; left:118px; top:305px; width:24px; height:24px;">{% if m_amo.MedSlot6_ammo != None %}<img src="/static/kill/item/types/{{ m_amo.MedSlot6_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="mid8l" style="position:absolute; left:146px; top:318px; width:24px; height:24px;">{% if m_amo.MedSlot7_ammo != None %}<img src="/static/kill/item/types/{{ m_amo.MedSlot7_ammo }}_32.png" alt="">{% endif %}</div>
+                                            {% endfor %}
+                                            {% for l_amo in low_slot_amo %}
+											<div id="low1l" style="position:absolute; left:315px; top:150px; width:24px; height:24px;">{% if l_amo.loSlot0_ammo != None %}<img src="/static/kill/item/types/{{ l_amo.loSlot0_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="low2l" style="position:absolute; left:319px; top:179px; width:24px; height:24px;">{% if l_amo.loSlot1_ammo != None %}<img src="/static/kill/item/types/{{ l_amo.loSlot1_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="low3l" style="position:absolute; left:318px; top:206px; width:24px; height:24px;">{% if l_amo.loSlot2_ammo != None %}<img src="/static/kill/item/types/{{ l_amo.loSlot2_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="low4l" style="position:absolute; left:310px; top:234px; width:24px; height:24px;">{% if l_amo.loSlot3_ammo != None %}<img src="/static/kill/item/types/{{ l_amo.loSlot3_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="low5l" style="position:absolute; left:297px; top:261px; width:24px; height:24px;">{% if l_amo.loSlot4_ammo != None %}<img src="/static/kill/item/types/{{ l_amo.loSlot4_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="low6l" style="position:absolute; left:275px; top:283px; width:24px; height:24px;">{% if l_amo.loSlot5_ammo != None %}<img src="/static/kill/item/types/{{ l_amo.loSlot5_ammo }}_32.png" alt="">{% endif %}</div>
+											<div id="low7l" style="position:absolute; left:251px; top:300px; width:24px; height:24px;">{% if l_amo.loSlot6_ammo != None %}<img src="/static/kill/item/types/{{ l_amo.loSlot6_ammo }}_32.png" alt="">{% endif %}</div>
+                                            <div id="low8l" style="position:absolute; left:225px; top:310px; width:24px; height:24px;">{% if l_amo.loSlot7_ammo != None %}<img src="/static/kill/item/types/{{ l_amo.loSlot7_ammo }}_32.png" alt="">{% endif %}</div>
+                                            {% endfor %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+											<div id="bigship" style="position:absolute; left:72px; top:71px; width:256px; height:256px; z-index:-2;">
+                                                {% for icon in kill %}
+												<a href="/ship/16236/" rel="tooltip" title="Coercer" class="">
+													<img
+														src="/static/kill/item/render/{{ icon.victim_personage_ship_id }}.png"
+														style="height: 256px; width: 256px;"
+														class="eveimage img-rounded"
+														alt="Coercer"
+													/>
+												</a>
+                                                {% endfor %}
+											</div>
+										</div>
+									</td>
+									<td style="width: 100%;" valign="top">
+										<div style="padding: 0px; width: 100%; margin: 0px;">
+											<table class="table table-condensed" style="width: 100%; margin: 0px;">
+												<tbody>
+													<tr>
+                                                        {% for k in kill %}
+														<td style="width: 66px; padding: 0px;">
+															<a href="" rel="tooltip" title="">
+																<img src="{{k.victim_personage_portrait}}" style="height: 64px; width: 64px;" class="eveimage img-rounded" alt="{{ k.victim_personage_name}}" />
+															</a>
+														</td>
+														<td style="width: 34px; padding: 0px;">
+															<a href="/corporation/98688983/"  rel="tooltip" title="Scavs">
+																<img
+																	src="{{k.victim_personage_corp_icon}}"
+																	style="height: 32px; width: 32px;"
+																	class="eveimage img-rounded"
+																	alt="{{ k.victim_personage_corp_name }}"/>
+															</a>
+															<br />
+                                                            <a href="">
+                                                                <img src="{{ k.victim_personage_all_icon }}" style="height: 32px; width: 32px;" alt="{{ k.victim_personage_all_name }}">
+                                                            </a>
+														</td>
+														<td style="padding: 0px;">
+															<a href="" style="text-decoration-line: none">{{ k.victim_personage_name }}</a>
+															<br>
+															<a href="" style="text-decoration-line: none">{{ k.victim_personage_corp_name }}</a>
+															<br>
+                                                            <br>
+                                                            <a href="" style="text-decoration-line: none">{{ k.victim_personage_all_name }}</a>
+                                                        <br>
+														</td>
+                                                        {% endfor %}
+													</tr>
+												</tbody>
+											</table>
+											<table class="table  table-striped table-hover" style="width: 100%; padding: 0px; margin: 0px;color: white;border-color: #dee2e600;">
+												<tbody>
+                                                {% for info in kill %}
+													<tr>
+														<th>Ship:</th>
+														<td style="width: 100%">
+															<a href="/ship/16236/" style="color: white; text-decoration-line: none ">{{ info.victim_personage_ship_name }}</a>
+                                                            <small>( <a href="/group/420/" style="text-decoration-line: none">{{ info.victim_personage_ship_type }}</a> )</small>
+														</td>
+													</tr>
+
+													<tr>
+														<th>System:</th>
+														<td>
+															<a href="/system/30000142/" style="text-decoration-line: none">{{ info.solar_system_name }} </a>
+															<span>(<span style="color: #3a9aeb">{{ info.solar_system_ss }}</span>)</span> / <a href="/region/The Forge/" style="text-decoration-line: none">{{ info.region_name }}</a>
+														</td>
+													</tr>
+
+													<tr>
+														<th>Time:</th>
+														<td class="info_kill_dttm">{{ info.date_kill|slice:':10' }} {{ info.date_kill|slice:'11:16' }}</td>
+													</tr>
+													<tr>
+														<th>Points:</th>
+														<td>{{ info.points }}</td>
+													</tr>
+													<tr>
+														<th>Damage:</th>
+														<td>2,778</td>
+													</tr>
+													<tr rel="tooltip" >
+														<th>Ship+Fit:</th>
+														<td class="item_fitted">1,353,558.73 ISK</td>
+													</tr>
+													<tr class="item_dropped_row" rel="tooltip">
+														<th>Dropped:</th>
+														<td class="item_dropped">{{ info.droppedValue|floatformat:"2g"|intcomma }} ISK</td>
+													</tr>
+													<tr rel="tooltip" >
+														<th>Destroyed:</th>
+														<td class="item_destroyed">{{ info.destroyedValue|floatformat:"2g"|intcomma }} ISK</td>
+													</tr>
+													<tr rel="tooltip" >
+														<th>Total:</th>
+														<td><strong class="item_dropped">{{ info.totalValue|floatformat:"2g"|intcomma }} ISK</strong></td>
+													</tr>
+                                                {% endfor %}
+												</tbody>
+											</table>
+										</div>
+									</td>
+								</tr>
+								<tr></tr>
+							</tbody>
+						</table>
+
+						<div class="row">
+							<div>
+								<br />
+								<div class="centered publift adrow ad-xl-none" fuse="home_incontent" id="detailadrow" style="padding-top: 1em;"></div>
+
+								<div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+									<table class="table table-condensed item_list item-table dataTable" id="DataTables_Table_0">
+										<thead>
+											<tr class="titles" role="row">
+												<th class="hidden-xs sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="&amp;nbsp;: activate to sort column ascending">&nbsp;</th>
+												<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Item Type: activate to sort column ascending">Item Type</th>
+												<th
+													onclick="hideSortStuff(true);"
+													class="sorting"
+													role="columnheader"
+													tabindex="0"
+													aria-controls="DataTables_Table_0"
+													rowspan="1"
+													colspan="1"
+													aria-label=" Quantity: activate to sort column ascending"
+												>
+													<div align="right"><b class="glyphicon glyphicon-sort"></b> Quantity</div>
+												</th>
+												<th
+													onclick="hideSortStuff(true);"
+													class="sorting"
+													role="columnheader"
+													tabindex="0"
+													aria-controls="DataTables_Table_0"
+													rowspan="1"
+													colspan="1"
+													aria-label=" Price (ISK): activate to sort column descending"
+												>
+													<div align="right"><b class="glyphicon glyphicon-sort"></b> Price (ISK)</div>
+												</th>
+											</tr>
+										</thead>
+										<tbody role="alert" aria-live="polite" aria-relevant="all">
+
+                                        <!---хай слоты --->
+                                        <tr class="hide-when-sorted odd">
+                                            <th colspan="4" class=" "><h5>High Slots</h5></th>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                        </tr>
+                            {%  for it in item %}
+                              {% if it.hi_slot %}
+                                {% if it.item_destroy %}
+                                        <tr class="even">
+                                            <td class="icons hidden-xs">
+                                            <div align="center">
+                                                <a href="/item/11578/" rel="tooltip" title="{{ it.item_name }}">
+                                                    <img
+                                                            class="eveimage img-rounded"
+                                                            src="/static/kill/item/types/{{ it.item_id }}_32.png"
+                                                            style="height: 24px; width: 24px;"
+                                                            alt="{{ it.item_name }}"
+                                                    />
+                                                </a>
+                                            </div>
+                                        </td>
+                                            <td class="item_destroyed"><a href="/item/11578/">{{ it.item_name}}</a></td>
+                                            <td class="item_destroyed" style="text-align: right;">{{ it.item_cont }}</td>
+
+                                        </tr>
+                                {% elif it.item_droped %}
+                                        <tr class="odd">
+                                            <td class="icons hidden-xs">
+                                                <div align="center">
+                                                    <a href="/item/25715/" rel="tooltip" title="{{it.item_name}}">
+                                                        <img
+                                                            class="eveimage img-rounded"
+                                                            src="/static/kill/item/types/{{ it.item_id }}_32.png"
+                                                            style="height: 24px; width: 24px;"
+                                                            alt="{{ it.item_name }}"
+                                                        />
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="item_dropped"><a href="/item/25715/">{{ it.item_name }}</a></td>
+                                            <td class="item_dropped" style="text-align: right;">{{ it.item_cont }}</td>
+
+                                        </tr>
+                                {% endif %}
+                              {% endif %}
+                               {% endfor %}
+
+                                        <!--- медиум слоты--->
+                                        <tr class="hide-when-sorted even">
+                                            <th colspan="4" class=" "><h5>Mid Slots</h5></th>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                        </tr>
+                                 {%  for it in item %}
+                                {% if it.mi_slot %}
+                                {% if it.item_destroy %}
+                                        <tr class="even">
+                                            <td class="icons hidden-xs">
+                                            <div align="center">
+                                                <a href="/item/11578/" rel="tooltip" title="{{ it.item_name }}">
+                                                    <img
+                                                            class="eveimage img-rounded"
+                                                            src="/static/kill/item/types/{{ it.item_id }}_32.png"
+                                                            style="height: 24px; width: 24px;"
+                                                            alt="{{ it.item_name }}"
+                                                    />
+                                                </a>
+                                            </div>
+                                        </td>
+                                            <td class="item_destroyed"><a href="/item/11578/">{{ it.item_name}}</a></td>
+                                            <td class="item_destroyed" style="text-align: right;">{{ it.item_cont }}</td>
+
+                                        </tr>
+                                {% elif it.item_droped %}
+                                        <tr class="odd">
+                                            <td class="icons hidden-xs">
+                                                <div align="center">
+                                                    <a href="/item/25715/" rel="tooltip" title="{{it.item_name}}">
+                                                        <img
+                                                            class="eveimage img-rounded"
+                                                            src="/static/kill/item/types/{{ it.item_id }}_32.png"
+                                                            style="height: 24px; width: 24px;"
+                                                            alt="{{ it.item_name }}"
+                                                        />
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="item_dropped"><a href="/item/25715/">{{ it.item_name }}</a></td>
+                                            <td class="item_dropped" style="text-align: right;">{{ it.item_cont }}</td>
+
+                                        </tr>
+                                {% endif %}
+                              {% endif %}
+                                {% endfor %}
+
+                                        <!--- лоу слоты--->
+                                        <tr>
+                                            <th colspan="4" class=" "><h5>Low Slots</h5></th>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                        </tr>
+                                 {%  for it in item %}
+                                {% if it.lo_slot %}
+                                {% if it.item_destroy %}
+                                        <tr class="even">
+                                            <td class="icons hidden-xs">
+                                            <div align="center">
+                                                <a href="/item/11578/" rel="tooltip" title="{{ it.item_name }}">
+                                                    <img
+                                                            class="eveimage img-rounded"
+                                                            src="/static/kill/item/types/{{ it.item_id }}_32.png"
+                                                            style="height: 24px; width: 24px;"
+                                                            alt="{{ it.item_name }}"
+                                                    />
+                                                </a>
+                                            </div>
+                                        </td>
+                                            <td class="item_destroyed"><a href="/item/11578/">{{ it.item_name}}</a></td>
+                                            <td class="item_destroyed" style="text-align: right;">{{ it.item_cont }}</td>
+
+                                        </tr>
+                                {% elif it.item_droped %}
+                                        <tr class="odd">
+                                            <td class="icons hidden-xs">
+                                                <div align="center">
+                                                    <a href="/item/25715/" rel="tooltip" title="{{it.item_name}}">
+                                                        <img
+                                                            class="eveimage img-rounded"
+                                                            src="/static/kill/item/types/{{ it.item_id }}_32.png"
+                                                            style="height: 24px; width: 24px;"
+                                                            alt="{{ it.item_name }}"
+                                                        />
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="item_dropped"><a href="/item/25715/">{{ it.item_name }}</a></td>
+                                            <td class="item_dropped" style="text-align: right;">{{ it.item_cont }}</td>
+
+                                        </tr>
+                                {% endif %}
+                              {% endif %}
+                               {% endfor %}
+                                        <!--- риги--->
+                                        <tr class="hide-when-sorted odd">
+                                            <th colspan="4" class=" "><h5>Rigs</h5></th>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                        </tr>
+                                        {%  for it in item %}
+                                        {% if it.rig_slot %}
+                                {% if it.item_destroy %}
+                                        <tr class="even">
+                                            <td class="icons hidden-xs">
+                                            <div align="center">
+                                                <a href="/item/11578/" rel="tooltip" title="{{ it.item_name }}">
+                                                    <img
+                                                            class="eveimage img-rounded"
+                                                            src="/static/kill/item/types/{{ it.item_id }}_32.png"
+                                                            style="height: 24px; width: 24px;"
+                                                            alt="{{ it.item_name }}"
+                                                    />
+                                                </a>
+                                            </div>
+                                        </td>
+                                            <td class="item_destroyed"><a href="/item/11578/">{{ it.item_name}}</a></td>
+                                            <td class="item_destroyed" style="text-align: right;">{{ it.item_cont }}</td>
+
+                                        </tr>
+                                {% elif it.item_droped %}
+                                        <tr class="odd">
+                                            <td class="icons hidden-xs">
+                                                <div align="center">
+                                                    <a href="/item/25715/" rel="tooltip" title="{{it.item_name}}">
+                                                        <img
+                                                            class="eveimage img-rounded"
+                                                            src="/static/kill/item/types/{{ it.item_id }}_32.png"
+                                                            style="height: 24px; width: 24px;"
+                                                            alt="{{ it.item_name }}"
+                                                        />
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="item_dropped"><a href="/item/25715/">{{ it.item_name }}</a></td>
+                                            <td class="item_dropped" style="text-align: right;">{{ it.item_cont }}</td>
+
+                                        </tr>
+                                {% endif %}
+                              {% endif %}
+                                    {% endfor %}
+
+                                        <!--- суб системы--->
+                                        <tr class="hide-when-sorted even">
+                                            <th colspan="4" class=" "><h5>SubSystems</h5></th>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                        </tr>
+                                    {%  for it in item %}
+                                        {% if it.sub_slot %}
+                                {% if it.item_destroy %}
+                                        <tr class="even">
+                                            <td class="icons hidden-xs">
+                                            <div align="center">
+                                                <a href="/item/11578/" rel="tooltip" title="{{ it.item_name }}">
+                                                    <img
+                                                            class="eveimage img-rounded"
+                                                            src="/static/kill/item/types/{{ it.item_id }}_32.png"
+                                                            style="height: 24px; width: 24px;"
+                                                            alt="{{ it.item_name }}"
+                                                    />
+                                                </a>
+                                            </div>
+                                        </td>
+                                            <td class="item_destroyed"><a href="/item/11578/">{{ it.item_name}}</a></td>
+                                            <td class="item_destroyed" style="text-align: right;">{{ it.item_cont }}</td>
+
+                                        </tr>
+                                {% elif it.item_droped %}
+                                        <tr class="odd">
+                                            <td class="icons hidden-xs">
+                                                <div align="center">
+                                                    <a href="/item/25715/" rel="tooltip" title="{{it.item_name}}">
+                                                        <img
+                                                            class="eveimage img-rounded"
+                                                            src="/static/kill/item/types/{{ it.item_id }}_32.png"
+                                                            style="height: 24px; width: 24px;"
+                                                            alt="{{ it.item_name }}"
+                                                        />
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="item_dropped"><a href="/item/25715/">{{ it.item_name }}</a></td>
+                                            <td class="item_dropped" style="text-align: right;">{{ it.item_cont }}</td>
+
+                                        </tr>
+                                {% endif %}
+                              {% endif %}
+                                    {% endfor %}
+
+                                        <!--- дрон бей--->
+                                        <tr class="hide-when-sorted even">
+                                            <th colspan="4" class=" "><h5>Drone Bay</h5></th>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                        </tr>
+                                        {%  for it in item %}
+                                        {% if it.drone_slot_slot %}
+                                {% if it.item_destroy %}
+                                        <tr class="even">
+                                            <td class="icons hidden-xs">
+                                            <div align="center">
+                                                <a href="/item/11578/" rel="tooltip" title="{{ it.item_name }}">
+                                                    <img
+                                                            class="eveimage img-rounded"
+                                                            src="/static/kill/item/types/{{ it.item_id }}_32.png"
+                                                            style="height: 24px; width: 24px;"
+                                                            alt="{{ it.item_name }}"
+                                                    />
+                                                </a>
+                                            </div>
+                                        </td>
+                                            <td class="item_destroyed"><a href="/item/11578/">{{ it.item_name}}</a></td>
+                                            <td class="item_destroyed" style="text-align: right;">{{ it.item_cont }}</td>
+
+                                        </tr>
+                                {% elif it.item_droped %}
+                                        <tr class="odd">
+                                            <td class="icons hidden-xs">
+                                                <div align="center">
+                                                    <a href="/item/25715/" rel="tooltip" title="{{it.item_name}}">
+                                                        <img
+                                                            class="eveimage img-rounded"
+                                                            src="/static/kill/item/types/{{ it.item_id }}_32.png"
+                                                            style="height: 24px; width: 24px;"
+                                                            alt="{{ it.item_name }}"
+                                                        />
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="item_dropped"><a href="/item/25715/">{{ it.item_name }}</a></td>
+                                            <td class="item_dropped" style="text-align: right;">{{ it.item_cont }}</td>
+
+                                        </tr>
+                                {% endif %}
+                              {% endif %}
+                                    {% endfor %}
+
+                                        <!--- карго --->
+                                        <tr class="hide-when-sorted odd">
+                                            <th colspan="4" class=" "><h5>Cargo</h5></th>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                        </tr>
+                                    {%  for it in item %}
+                                        {% if it.cargo_slot %}
+                                {% if it.item_destroy %}
+                                        <tr class="even">
+                                            <td class="icons hidden-xs">
+                                            <div align="center">
+                                                <a href="/item/11578/" rel="tooltip" title="{{ it.item_name }}">
+                                                    <img
+                                                            class="eveimage img-rounded"
+                                                            src="/static/kill/item/types/{{ it.item_id }}_32.png"
+                                                            style="height: 24px; width: 24px;"
+                                                            alt="{{ it.item_name }}"
+                                                    />
+                                                </a>
+                                            </div>
+                                        </td>
+                                            <td class="item_destroyed"><a href="/item/11578/">{{ it.item_name}}</a></td>
+                                            <td class="item_destroyed" style="text-align: right;">{{ it.item_cont }}</td>
+
+                                        </tr>
+                                {% elif it.item_droped %}
+                                        <tr class="odd">
+                                            <td class="icons hidden-xs">
+                                                <div align="center">
+                                                    <a href="/item/25715/" rel="tooltip" title="{{it.item_name}}">
+                                                        <img
+                                                            class="eveimage img-rounded"
+                                                            src="/static/kill/item/types/{{ it.item_id }}_32.png"
+                                                            style="height: 24px; width: 24px;"
+                                                            alt="{{ it.item_name }}"
+                                                        />
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="item_dropped"><a href="/item/25715/">{{ it.item_name }}</a></td>
+                                            <td class="item_dropped" style="text-align: right;">{{ it.item_cont }}</td>
+
+                                        </tr>
+                                {% endif %}
+                              {% endif %}
+                                    {% endfor %}
+                                        <!--- корабль--->
+                                        <tr class="hide-when-sorted even">
+                                            <td colspan="4" class=" "><h5>Ship</h5></td>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                        </tr>
+                                        {% for k in kill %}
+                                        <tr class="odd">
+                                            <td class="icons hidden-xs">
+                                                <div align="center">
+                                                    <a href="/ship/29990/" rel="tooltip" title="{{ k.victim_personage_ship_name }}" class="">
+                                                        <img src="/static/kill/item/render/{{ k.victim_personage_ship_id }}.png" style="height: 32px; width: 32px;" class="eveimage img-rounded" alt="Loki" onerror="this.setAttribute('shipImageError', 'true')" />
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class=" "><a href="/item/29990/">{{ k.victim_personage_ship_name }}</a></td>
+                                            <td class=" "><div align="right" class="qty">1</div></td>
+
+                                        </tr>
+                                        <tr class="item_dropped_row hide-when-sorted even">
+                                            <td colspan="2" class=" "><h5>Total Dropped:</h5></td>
+                                            <td colspan="2" style="text-align: right;" class=" ">
+                                                <div class="pull-right" style="width: 100%;"><h5 class="item_dropped" rel="tooltip">{{ k.droppedValue|floatformat:"2g"|intcomma }} ISK</h5></div>
+                                            </td>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                        </tr>
+                                                                            <tr class="hide-when-sorted odd">
+                                            <td colspan="2" class=" "><h5>Total Destroyed:</h5></td>
+                                            <td colspan="2" style="text-align: right;" class=" ">
+                                                <div class="pull-right" style="width: 100%;"><h5 class="item_destroyed" rel="tooltip">{{ k.destroyedValue|floatformat:"2g"|intcomma }} ISK</h5></div>
+                                            </td>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                        </tr>
+                                                                            <tr class="hide-when-sorted even">
+                                            <td colspan="2" class=" "><h5>Grand Total:</h5></td>
+                                            <td colspan="2" style="text-align: right;" class="totalprice">
+                                                <div class="pull-right" style="width: 100%;"><h5 rel="tooltip" >{{ k.totalValue|floatformat:"2g"|intcomma }} ISK</h5></div>
+                                            </td>
+                                            <td class="hidden"></td>
+                                            <td class="hidden"></td>
+                                        </tr>
+                                        {% endfor %}
+                                        </tbody>
+
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="tab-pane fade in active" id="details">
+							<div style="margin-bottom: 0.25em;">
+								<table class="table table-condensed" style="margin: 0px;">
+									<thead>
+										<tr class="titles centered">
+											<th style="text-align: center;">Final Blow</th>
+											<th style="text-align: center;">Top Damage</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td style="text-align: center;">
+												<a href="/character/2121172919/" rel="tooltip" title="Elbert Chase">
+													<img src="https://images.evetech.net/characters/2121172919/portrait?size=64" style="height: 64px; width: 64px;" class="eveimage img-rounded" alt="Elbert Chase" />
+												</a>
+											</td>
+											<td style="text-align: center;">
+												<a href="/character/2120610339/" rel="tooltip" title="Tutella Asovna">
+													<img src="https://images.evetech.net/characters/2120610339/portrait?size=64" style="height: 64px; width: 64px;" class="eveimage img-rounded" alt="Tutella Asovna" />
+												</a>
+											</td>
+										</tr>
+										<tr>
+											<td style="text-align: center;">
+												<a class="info_final_blow" href="/character/2121172919/">Elbert Chase</a>
+											</td>
+											<td style="text-align: center;">
+												<a class="info_top_damage" href="/character/2120610339/">Tutella Asovna</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div>
+								<div style="margin: 0px;">
+									<table class="table table-condensed table-striped table-hover" style="margin-bottom: 0px;">
+										<thead>
+											<tr class="titles">
+												<th colspan="2" class="hidden-md hidden-xs">3 Involved</th>
+												<th class="hidden-lg" colspan="2">3 Involved</th>
+												<th style="text-align: right" colspan="2" class="hidden-md hidden-xs">Damage</th>
+												<th style="text-align: right" class="hidden-lg">Damage</th>
+											</tr>
+										</thead>
+										<tbody>
+                                        {% for att in attack %}
+											<tr class="attacker">
+												<td class="hidden-lg hidden-md hidden-sm" style="width: 40px; vertical-align: middle;">
+													<a href="/character/2120610339/" rel="tooltip" title="">
+														<img src="https://images.evetech.net/characters/{{ att.character_id }}/portrait?size=64" style="height: 64px; width: 64px;" class="eveimage img-rounded" alt="" />
+													</a>
+													<a href="/ship/3756/" rel="tooltip" title="Gnosis" class="">
+														<img
+															src="https://images.evetech.net/types/{{ att.ship_type_id }}/render?size=64"
+															style="height: 64px; width: 64px;"
+															class="eveimage img-rounded"
+															alt=""
+
+														/>
+													</a>
+												</td>
+												<td class="hidden-xs" style="width: 64px; vertical-align: middle;">
+													<a href="/character/2120610339/" rel="tooltip" title="Tutella Asovna">
+														<img src="https://images.evetech.net/characters/{{ att.character_id }}/portrait?size=64" style="height: 64px; width: 64px;" class="eveimage img-rounded" alt="Tutella Asovna" />
+													</a>
+												</td>
+												<td class="hidden-xs" style="width: 35px; vertical-align: middle;">
+													<a href="/ship/3756/" rel="tooltip" title="Gnosis" class="">
+														<img
+															src="https://images.evetech.net/types/{{ att.ship_type_id }}/render?size=32"
+															style="height: 32px; width: 32px;"
+															class="eveimage img-rounded"
+															alt="Gnosis"
+
+														/>
+													</a>
+													<a href="/item/3756/" rel="tooltip" title="Gnosis">
+														<img
+															class="eveimage img-rounded"
+															src="https://images.evetech.net/types/{{ att.weapon_type_id }}/icon?size=32"
+															style="height: 32px; width: 32px;"
+															alt="Gnosis"
+
+														/>
+													</a>
+												</td>
+												<td class="pilotinfo">
+													<div class="hidden-lg">
+														<a href="/character/2120610339/">Tutella Asovna</a>
+														/ <a href="/ship/3756/">Gnosis</a>
+														<br />
+														<a href="/corporation/1000167/">State War Academy</a>
+														/ <a href="/item/3756/">Gnosis</a>
+														<br />
+													</div>
+													<div class="hidden-sm hidden-md hidden-xs">
+														<a href="/character/2120610339/">Tutella Asovna</a>
+														<br />
+														<a href="/corporation/1000167/">State War Academy</a>
+														<br />
+													</div>
+												</td>
+												<td class="damage" style="vertical-align: middle; text-align: right;">
+													{{ att.damage_done }}<br />
+													<small>87.9%<small> </small></small>
+												</td>
+											</tr>
+                                        {% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+						</div>
+						<hr />
+
+					</div>
+				</span>
+			</div>
+		</div>
+	</body>
+</html>

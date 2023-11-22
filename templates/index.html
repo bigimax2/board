@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load humanize %}
 {% load static %}
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
+    <title>killboard C A M E L O T</title>
     <link rel="stylesheet" href="/static/kill/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/kill/css/styles.min.css">
 </head>
 
-<body style="background: url(/static/kill/img/a-year-in-eve.png) center / cover;opacity: 1;">
-    <h1 class="text-center text-white d-none d-lg-block site-heading" data-bss-parallax-bg="true" style="margin-top: 30px;"><span class="site-heading-lower" style="font-weight: bold;letter-spacing: 20px;font-family: Raleway;margin-top: 0px;padding-top: 0px;">C A M E L O T</span></h1>
-  <div class="container" style="font-size: 14px;background: rgba(0,0,0,0.57);color: rgb(63,65,67);line-height: 14px;">
+<body style="opacity: 1;background: url(/static/kill/img/a-year-in-eve.png) no-repeat fixed center;">
+    <h1 class="text-center text-white d-none d-lg-block site-heading" data-bss-parallax-bg="true" style="margin-top: 30px;"><span class="site-heading-lower " style="font-weight: bold;letter-spacing: 20px;font-family: Raleway;margin-top: 0px;padding-top: 0px;">C A M E L O T</span></h1>
+  <div class="container" style="font-size: 14px;background: rgba(0,0,0,0.7);color: rgb(63,65,67);line-height: 14px;">
     <div class="row" style="margin-left: 0px;margin-right: 1px;height: 80px;font-size: 10px;">
       <div class="col-sm-2" style="padding-right: 20px;padding-left: 0px;margin-top: 0px;padding-top: 0px;padding-bottom: 12px;">
         <div class="table-responsive">
@@ -23,7 +24,7 @@
                 <th style="text-align: center;color: var(--bs-table-striped-bg);background: var(--bs-table-striped-bg);border-bottom-color: var(--bs-table-striped-bg);"></th>
                 <th style="text-align: center;color: var(--bs-table-striped-bg);background: var(--bs-table-striped-bg);border-bottom-color: var(--bs-table-striped-bg);"></th>
                 <th style="text-align: center;color: var(--bs-table-striped-bg);background: var(--bs-table-striped-bg);border-bottom-color: var(--bs-table-striped-bg);"></th>
-                <th style="text-align: center;font-size: 15px;line-height: 32px;background: var(--bs-table-striped-bg);color: var(--bs-body-bg);">Top 15&nbsp; Corps.</th>
+                <th class="font-monospace" style="text-align: center;font-size: 15px;line-height: 32px;background: var(--bs-table-striped-bg);color: var(--bs-body-bg);">Top 15&nbsp; Corps.</th>
 
 
               </tr>
@@ -40,7 +41,7 @@
                 <th style="text-align: center;color: var(--bs-table-striped-bg);background: var(--bs-table-striped-bg);border-bottom-color: var(--bs-table-striped-bg);"></th>
                 <th style="text-align: center;color: var(--bs-table-striped-bg);background: var(--bs-table-striped-bg);border-bottom-color: var(--bs-table-striped-bg);"></th>
                 <th style="text-align: center;color: var(--bs-table-striped-bg);background: var(--bs-table-striped-bg);border-bottom-color: var(--bs-table-striped-bg);"></th>
-                <th style="text-align: center;font-size: 20px;line-height: 32px;background: var(--bs-table-striped-bg);color: #008000;">Kills</th>
+                <th class="font-monospace" style="text-align: center;font-size: 20px;line-height: 32px;background: var(--bs-table-striped-bg);color: #008000;">Kills</th>
               </tr>
             </tbody>
           </table>
@@ -55,7 +56,7 @@
                 <th style="text-align: center;color: var(--bs-table-striped-bg);background: var(--bs-table-striped-bg);border-bottom-color: var(--bs-table-striped-bg);"></th>
                 <th style="text-align: center;color: var(--bs-table-striped-bg);background: var(--bs-table-striped-bg);border-bottom-color: var(--bs-table-striped-bg);"></th>
                 <th style="text-align: center;color: var(--bs-table-striped-bg);background: var(--bs-table-striped-bg);border-bottom-color: var(--bs-table-striped-bg);"></th>
-                <th style="text-align: center;font-size: 20px;line-height: 32px;background: var(--bs-table-striped-bg);color: var(--bs-red);">Loss</th>
+                <th class="font-monospace" style="text-align: center;font-size: 20px;line-height: 32px;background: var(--bs-table-striped-bg);color: var(--bs-red);">Loss</th>
               </tr>
             </tbody>
           </table>
@@ -70,7 +71,7 @@
                 <th style="text-align: center;color: var(--bs-table-striped-bg);background: var(--bs-table-striped-bg);border-bottom-color: var(--bs-table-striped-bg);"></th>
                 <th style="text-align: center;color: var(--bs-table-striped-bg);background: var(--bs-table-striped-bg);border-bottom-color: var(--bs-table-striped-bg);"></th>
                 <th style="text-align: center;color: var(--bs-table-striped-bg);background: var(--bs-table-striped-bg);border-bottom-color: var(--bs-table-striped-bg);"></th>
-                <th style="text-align: center;font-size: 15px;line-height: 32px;background: var(--bs-table-striped-bg);color: var(--bs-body-bg);">Top 15&nbsp; Chars.</th>
+                <th class="font-monospace" style="text-align: center;font-size: 15px;line-height: 32px;background: var(--bs-table-striped-bg);color: var(--bs-body-bg);">Top 15&nbsp; Chars.</th>
               </tr>
             </tbody>
           </table>
@@ -84,8 +85,8 @@
             <tbody>
             {% for corp in top_15_corp %}
               <tr>
-                <td style="color: #ff5900;background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);">{{ corp.corp_name }}</td>
-                <td style="text-align: right;color: #FF5900;background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);">{{ corp.corp_kills }}</td>
+                <td class="font-monospace" style="color: #ffea00;background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);">{{ corp.corp_name }}</td>
+                <td class="font-monospace" style="text-align: right;color: #ffea00;background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);">{{ corp.corp_kills }}</td>
               </tr>
             {% endfor %}
             </tbody>
@@ -100,8 +101,8 @@
             {% if kill1  %}
                     {% for i in kill1 %}
               <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 14px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">{{ i.name }}</td>
-                <td class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">{{ i.ship_kills }}</td>
+                <td class="font-monospace" style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 14px;border-width: 0px;border-bottom-width: 1px;border-bottom-color: rgba(222,226,230,0.5);">{{ i.name }}</td>
+                <td class="font-monospace" class="text-end" style="color: var(--bs-success);background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);font-size: 15px;">{{ i.ship_kills }}</td>
               </tr>
                     {% endfor %}
             {% endif %}
@@ -116,8 +117,8 @@
             {% if kill2 %}
                 {% for i in kill2 %}
               <tr>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">{{ i.name }}</td>
-                <td style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">{{ i.ship_kills }}</td>
+                <td class="font-monospace" style="background: var(--bs-table-striped-bg);color: var(--bs-success);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 1px;border-left-color: rgba(222,226,230,0.5);">{{ i.name }}</td>
+                <td class="font-monospace" style="background: var(--bs-table-striped-bg);color: var(--bs-success);text-align: right;font-size: 15px;border-right-width: 2px;border-bottom-color: rgba(222,226,230,0.5);">{{ i.ship_kills }}</td>
               </tr>
                 {% endfor %}
             {% endif %}
@@ -133,8 +134,8 @@
             {% if kill1 %}
                 {% for i in kill1 %}
               <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 14px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">{{ i.name }}</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">{{ i.ship_loss }}</td>
+                <td class="font-monospace" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 14px;border-bottom-color: rgba(222,226,230,0.5);border-left-width: 2px;">{{ i.name }}</td>
+                <td class="font-monospace" class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-right-width: 1px;border-right-color: rgba(222,226,230,0.5);border-bottom-color: rgba(222,226,230,0.5);">{{ i.ship_loss }}</td>
               </tr>
                 {% endfor %}
             {% endif %}
@@ -149,8 +150,8 @@
             {% if kill2 %}
             {% for i in kill2 %}
               <tr>
-                <td style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">{{ i.name }}</td>
-                <td class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">{{ i.ship_loss }}</td>
+                <td class="font-monospace" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">{{ i.name }}</td>
+                <td class="font-monospace" class="text-end" style="color: var(--bs-red);background: var(--bs-table-striped-bg);font-size: 15px;border-bottom-color: rgba(222,226,230,0.5);">{{ i.ship_loss }}</td>
               </tr>
             {% endfor %}
             {% endif %}
@@ -164,8 +165,8 @@
             <tbody>
             {% for char in top_15_chars %}
               <tr>
-                <td style="color: #FF5900;background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);">{{ char.char_name }}</td>
-                <td style="text-align: right;background: var(--bs-table-striped-bg);color: #FF5900;border-bottom-color: rgba(222,226,230,0.5);">{{ char.char_kills }}</td>
+                <td class="font-monospace" style="color: #ffea00;background: var(--bs-table-striped-bg);border-bottom-color: rgba(222,226,230,0.5);">{{ char.char_name }}</td>
+                <td class="font-monospace" style="text-align: right;background: var(--bs-table-striped-bg);color: #ffea00;border-bottom-color: rgba(222,226,230,0.5);">{{ char.char_kills }}</td>
               </tr>
             {% endfor %}
             </tbody>
@@ -183,8 +184,8 @@
             <tbody>
               <tr style="border-width: 1px;">
                 <th style="color: rgb(255,255,255);background: var(--bs-table-striped-bg);">корабли</th>
-                <td class="green" style="text-align: right;font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 18px;border-width: 0px;background: var(--bs-table-striped-bg);color: green;">{{ i.ships_destroyer }}</td>
-                <td class="red_stata" style="text-align: right;font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 18px;background: var(--bs-table-accent-bg);color: red;">{{ i.ships_lost }}</td>
+                <td class="green " style="text-align: right;font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 18px;border-width: 0px;background: var(--bs-table-striped-bg);color: green;">{{ i.ships_destroyer }}</td>
+                <td class="red_stata " style="text-align: right;font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 18px;background: var(--bs-table-accent-bg);color: red;">{{ i.ships_lost }}</td>
                 <td class="red_stata" style="text-align: right;font-weight: bold;letter-spacing: 0px;line-height: 14px;font-size: 18px;background: var(--bs-table-striped-bg);color: white;">Cell 4</td>
               </tr>
               <tr style="border-width: 1px;">
@@ -213,46 +214,75 @@
           <table class="table">
             <thead>
               <tr>
-                <th style="color: rgb(255,255,255);background: var(--bs-table-striped-bg);">Дата</th>
-                <th class="text-center" style="color: rgb(255,255,255);width: 64px;background: var(--bs-table-striped-bg);">Шип</th>
-                <th style="color: rgb(255,255,255);width: 115px;background: var(--bs-table-striped-bg);">Место</th>
-                <th style="color: rgb(255,255,255);width: 64px;background: var(--bs-table-striped-bg);"></th>
-                <th style="color: rgb(255,255,255);background: var(--bs-table-striped-bg);">Жертва</th>
-                <th style="color: rgb(255,255,255);width: 64px;height: 40px;background: var(--bs-table-striped-bg);"></th>
-                <th style="color: rgb(255,255,255);background: var(--bs-table-striped-bg);">Кто добил</th>
+                <th class="font-monospace" style="color: rgb(255,255,255);background: var(--bs-table-striped-bg);">Дата</th>
+                <th class="text-center font-monospace" style="color: rgb(255,255,255);width: 64px;background: var(--bs-table-striped-bg);">Шип</th>
+                <th class="font-monospace" style="color: rgb(255,255,255);width: 170px;background: var(--bs-table-striped-bg);">Место</th>
+                <th class="font-monospace" style="color: rgb(255,255,255);width: 64px;background: var(--bs-table-striped-bg);"></th>
+                <th class="font-monospace" style="color: rgb(255,255,255);background: var(--bs-table-striped-bg);">Жертва</th>
+                <th class="font-monospace" style="color: rgb(255,255,255);width: 64px;height: 40px;background: var(--bs-table-striped-bg);"></th>
+                <th class="font-monospace" style="color: rgb(255,255,255);background: var(--bs-table-striped-bg);">Кто добил</th>
               </tr>
             </thead>
             <tbody>
             {% for kill in killlist %}
-              <tr>
-                <td style="width: 50px;color: rgb(255,255,255);border-width: 0px;background: var(--bs-table-striped-bg);"><span>time</span>
-                    <br />
-                    <a href="#" style="border-color: rgb(251,251,251);color: rgb(255,255,255);">price</a></td>
+                {% if kill.loss %}
+              <tr style="    background: rgba(255,0,47,0.25);
+
+    text-shadow: 0px 5px 7px;">
+              {% else %}
+              <tr  style="    background: rgba(51,255,0,0.25);
+
+    text-shadow: 0px 5px 7px;">
+              {% endif %}
+                <td class="font-monospace" style="width: 50px;color: rgb(255,255,255);border-width: 0px;background: var(--bs-table-striped-bg);"><span>{{ kill.date_kill|slice:":10" }}</span><br />
+                    <span>{{ kill.date_kill|slice:"11:16" }}</span><br />
+                    <span style="border-color: rgb(251,251,251);color: #f89604;">{{ kill.destroyedValue|floatformat:"0g"|intcomma}}</span></td>
                 <td style="border-width: 0px;text-align: center;vertical-align: middle;background: var(--bs-table-striped-bg);">
-                  <a href="#"><img style="width: 40px;height: 40px;" src="{{ kill.victim_personage_ship_icon }}"></a>
+                  <a href="{% url 'ShowKill' kill.killmailID %}"><img style="width: 40px;height: 40px;" src="/static/kill/item/types/{{ kill.victim_personage_ship_id }}_32.png" alt="Images"></a>
                 </td>
-                <td style="border-width: 0px;background: var(--bs-table-striped-bg);">
-                  <div style="width: 100%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">
+                <td class="font-monospace d-inline" style="border-width: 0px;background: var(--bs-table-striped-bg);">
+                  <div style="width: 100%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;padding: 3px">
                       <span style="color: rgb(255,255,255);">{{ kill.solar_system_ss }}</span>
-                      <a href="#" style="color: rgb(247,247,247);">{{ kill.solar_system_name }}</a>
+                      <span style="color: rgb(247,247,247);">{{ kill.solar_system_name }}</span>
                   </div>
-                    <a href="#" style="color: rgb(254,254,254);">region</a>
+                    <span style="color: rgb(254,254,254);">{{ kill.region_name }}</span>
                 </td>
                 <td style="border-width: 0px;height: 40.5px;width: 40px;background: var(--bs-table-striped-bg);">
-                  <a href="#"><img style="width: 40px;height: 40px;margin-right: 0px;margin-left: 4px;" src="{{ kill.victim_personage_all_icon }}"></a>
+                    {% if kill.victim_personage_all_icon != None %}
+                        <span><img style="width: 40px;height: 40px;margin-right: 0px;margin-left: 4px;" src="{{ kill.victim_personage_all_icon }}"></span>
+                      {% else %}
+                        <span><img style="width: 40px;height: 40px;margin-right: 0px;margin-left: 4px;" src="{{ kill.victim_personage_corp_icon }}"></span>
+                      {% endif %}
+
                 </td>
-                  <td style="border-width: 0px;color: rgb(252,252,252);background: var(--bs-table-striped-bg);">
-                      <span>{{ kill.victim_personage_name }}</span><br>
-                      <span>{{ kill.victim_personage_corp_name }}</span><br>
-                      <span>{{ kill.victim_personage_all_name}}</span>
+                  <td class="font-monospace d-inline" style="border-width: 0px;color: rgb(252,252,252);background: var(--bs-table-striped-bg);font-family: monospace"><br>
+                  <div style="width: 100%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;padding: 3px">
+                      <span style="color: rgb(247,247,247);">{{ kill.victim_personage_name }} ({{ kill.victim_personage_ship_name }})</span><br>
+                  </div>
+                      {% if kill.victim_personage_all_name != None%}
+                      <span style="color: rgb(247,247,247);">{{ kill.victim_personage_all_name}}</span><br>
+                      {% else %}
+                          <span style="color: rgb(247,247,247);">{{ kill.victim_personage_corp_name }}</span><br>
+                      {% endif %}
+
                   </td>
                 <td style="border-width: 0px;background: var(--bs-table-striped-bg);">
+                    {% if kill.attack_final_personage_all_icon != None %}
                   <a href="#"><img style="width: 40px;height: 40px;padding: 0px;margin: 0px;margin-right: 0px;margin-left: 3px;" src="{{ kill.attack_final_personage_all_icon }}"></a>
+                    {% else %}
+                    <a href="#"><img style="width: 40px;height: 40px;padding: 0px;margin: 0px;margin-right: 0px;margin-left: 3px;" src="{{ kill.attack_final_personage_corp_icon }}"></a>
+                    {% endif %}
                 </td>
-                <td style="border-width: 0px;color: rgb(252,252,252);background: var(--bs-table-striped-bg);">
-                    <span>{{ kill.attack_final_personage_name }}</span><br>
-                    <span>{{ kill.attack_final_personage_corp_name }}</span><br>
+                <td class="font-monospace d-inline" style="border-width: 0px;color: rgb(252,252,252);background: var(--bs-table-striped-bg);font-family: monospace">
+                    <div style="width: 100%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;padding: 3px">
+                    <span style="color: rgb(247,247,247);text-decoration: none">{{ kill.attack_final_personage_name }}</span><br>
+                    </div>
+                    {% if  kill.attack_final_personage_all_name != None%}
                     <span>{{ kill.attack_final_personage_all_name }}</span>
+                    {% else %}
+                    <span>{{ kill.attack_final_personage_corp_name }}</span><br>
+                    {% endif %}
+
                 </td>
               </tr>
             {% endfor %}
@@ -262,6 +292,31 @@
       </div>
     </div>
   </div>
+    <nav class="pagination-outer">
+      <ul class="pagination">
+      {% if killlist.has_previous %}
+      <li class="page-item">
+          <a href="?page={{ killlist.previous_page_number }}" class="page-link font-monospace" aria-label="Previous"><span aria-hidden="true"><<</span> </a>
+      </li>
+      {% endif %}
+          {% for p in killlist.paginator.page_range %}
+              {% if killlist.number == p %}
+              <li class="page-item active">
+              <a href="?page={{ p}}" class="page-link font-monospace">{{ p }}</a>
+                </li>
+              {% elif p >= killlist.number|add:-2 and p <= killlist.number|add:2 %}
+          <li class="page-item">
+              <a href="?page={{ p}}" class="page-link font-monospace">{{ p }}</a>
+          </li>
+              {% endif %}
+          {% endfor %}
+      {% if killlist.has_next %}
+      <li class="page-item">
+          <a href="?page={{ killlist.next_page_number }}" class="page-link font-monospace" aria-label="Next"><span aria-hidden="true">>> </span> </a>
+      </li>
+      {% endif %}
+      </ul>
+  </nav>
     <a href='{% url 'parser_kill_id' %}' class="btn btn-warning">tatch</a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/static/kill/js/script.min.js"></script>
